@@ -5,7 +5,7 @@ apk add gcc make musl-dev openssl-dev
 wget https://github.com/curl/curl/releases/download/curl-7_65_3/curl-7.65.3.tar.xz
 tar xvfJ curl-7.65.3.tar.xz 
 cd curl-*
-./configure --disable-shared --with-ca-fallback
+./configure --disable-shared --with-ca-fallback --with-ca-bundle=/etc/pki/tls/certs/ca-bundle.crt
 make curl_LDFLAGS=-all-static 
 make install
 cp /usr/local/bin/curl /out
